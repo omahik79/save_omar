@@ -1,7 +1,7 @@
 
 
 function loadImages(){
-	// To load custom images as enemy and ship
+	// To load custom images as enemy and omar picture
 	enemyImage = new Image();
 	omarImage = new Image();
 	
