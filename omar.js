@@ -30,7 +30,7 @@ counter = 0;
 
 loadImages();
 
-// ship is the spaceship we are creating.
+// ship is the omar picture we are creating.
 ship = {
 	x : 300,
 	y : H-50,
