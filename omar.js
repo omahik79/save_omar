@@ -37,7 +37,7 @@ ship = {
 	w : 50,
 	h : 50,
 	speed : 25,
-	bullets : [],
+	
 
 	update : function(){
 		//this.x = this.x + this.speed;
@@ -51,9 +51,6 @@ ship = {
 	draw : function(){
 		// pen.drawImage() is used to load a custom image
 		pen.drawImage(omarImage,ship.x,ship.y,ship.w,ship.h)
-
-		// pen.fillRect() is used to create a rectangle
-		//pen.fillRect(ship.x,ship.y,ship.w,ship.h) // (10,10) is the co-ordinate of the upper left vertex of rectange. (20,20) = (width,height)
 	},
 
 	
@@ -149,13 +146,13 @@ function enemy(x,y,speed){
 function draw(){
 	// In the canvas, towards the right, it is +ve x axis and towards bottom, it is +ve y axis.
 
-	//pen.fillStyle = "green" // to fill with green color.
-	//pen.fillRect(10,10,50,50) // (10,10) is the co-ordinate of the upper left vertex of rectange. (50,50) = (width,height)
+	
+	
 
 	//to erase the old screen. Here, we erase the whole screen and redraw it again.
 	pen.clearRect(0,0,W,H);
 
-	pen.fillStyle = "red"  // to fill with red color.
+	
 	//Drawing the ship
 	ship.draw()
 
