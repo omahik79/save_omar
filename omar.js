@@ -194,7 +194,7 @@ function update(){
 
 		var e = new enemy(x,y,speed,enemyImage);
 		enemies.push(e);
-        var d = new enemy(x+10,y+10,speed+2,green_enemy);
+        var d = new enemy(x+10,y+10,speed+2,green_enemy); 
         enemies.push(d);
 	}
 
