@@ -4,10 +4,11 @@ function loadImages(){
 	// To load custom images as enemy and omar picture
 	enemyImage = new Image();
 	omarImage = new Image();
-	
+	green_enemy= new Image();
 
 	enemyImage.src = "Images/enemy.png";
-	omarImage.src = "Images/player.png"
+	omarImage.src = "Images/player.png";
+    green_enemy.src = "Images/green enemy.png";
 	
 }
 
@@ -102,15 +103,18 @@ function buttonGotPressed(e){
 document.addEventListener('keydown', buttonGotPressed);   
 
 enemies = [];
-var e = new enemy(10,20,5);
+
+var e = new enemy(10,20,5,enemyImage);
+var d = new enemy(5,20,10,green_enemy);
 enemies.push(e);
+ enemies.push(d);   
 
 }
 
 
 
 // Class defined for an enemy
-function enemy(x,y,speed){
+function enemy(x,y,speed,draw){
 	this.x = x;
 	this.y = y;
 	this.w = 50;
@@ -120,8 +124,8 @@ function enemy(x,y,speed){
 
 	this.draw = function(){
 
-		pen.drawImage(enemyImage,this.x,this.y,this.w,this.h);
-
+		pen.drawImage(draw,this.x,this.y,this.w,this.h);
+      
 	}
 
 	this.update = function(){
@@ -175,7 +179,7 @@ function update(){
 		enemy.update();
 	});
 
-    // Math.random() generates a random number between 0 and 1.
+// Math.random() generates a random number between 0 and 1.
 	var no =  Math.random();
 	if(no<0.01){
 		var x = Math.floor(Math.random()*(W-50));
@@ -188,8 +192,10 @@ function update(){
 			speed = -speed;
 		}
 
-		var e = new enemy(x,y,speed);
+		var e = new enemy(x,y,speed,enemyImage);
 		enemies.push(e);
+        var d = new enemy(x+10,y+10,speed+2,green_enemy);
+        enemies.push(d);
 	}
 
 	enemies.forEach(function(enemy){
@@ -210,7 +216,7 @@ function update(){
 }
 
 function isColliding(r1,r2){
-	var x_axis = Math.abs(r1.x - r2.x)<= Math.max(r1.w,r2.w);
+	var x_axis = Math.abs(r1.x - r2.x)<= Math.max(r1.w,r2.w) ; 
 	var y_axis = Math.abs(r1.y - r2.y)<= Math.max(r1.h,r2.h);
 
 	return x_axis && y_axis;
