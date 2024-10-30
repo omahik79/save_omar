@@ -203,7 +203,7 @@ function update(){
             
             
            
-                  alert("game over, click ok to play a new game ");
+                  alert("game over, click ok to play a new game  and try to save the doge to win 1 million $sdoge ");
 			
 			gameover = true;  
                 
